@@ -11,7 +11,7 @@ function callback(response) {
 function sendReq(channel) {
     var scriptEl = document.createElement("script");
     scriptEl.id = "getChannelsInfo";
-    scriptEl.src = "https://wind-bow.glitch.me/twitch-api/channels/" + channel + "?callback=callback";
+    scriptEl.src = "https://wind-bow.glitch.me/twitch-api/streams/" + channel + "?callback=callback";
     document.body.appendChild(scriptEl);
     //remove script element
     document.getElementById(scriptEl.id).remove();
