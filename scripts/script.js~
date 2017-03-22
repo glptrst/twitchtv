@@ -1,0 +1,8 @@
+function makeReq(method, url, callback) {
+    var req = new XMLHttpRequest();
+    req.addEventListener("load", function(){
+        callback(JSON.parse(req.responseText));
+    });
+    req.open(method, url); 
+    req.send();
+}
