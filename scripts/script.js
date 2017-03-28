@@ -8,13 +8,14 @@ channelsNames.forEach(function getInfo(channel) {
 
 //manage responses
 function callback(response) {
+    console.log(response);
     var channelName = response._links.channel.split("/")[response._links.channel.split("/").length - 1];
 
     var el = document.getElementById(channelName);
     if (response.stream === null) {
         el.innerHTML = channelName +": Offline";
     } else {
-        el.innerHTML = channelName +": Online!";
+        el.innerHTML = channelName +": <a href=" + response.stream.channel.url + ">Online</a>" + " " + response.stream.channel.status;
     }
 }
 
